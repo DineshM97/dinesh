@@ -1,0 +1,238 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signup.aspx.cs" Inherits="library.signup" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <link href="StyleSheet1.css" rel="stylesheet"  />
+<head runat="server">
+    <title></title>
+         <style>
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: red;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+.header {
+  background-color: #cd5d39;
+  padding: 40px;
+  text-align: left;
+}
+
+.header-img {
+  width: 100%;
+  height: auto;
+  background: url(C:\Users\admin\source\repos\WebApplication2\WebApplication1\images\Books-Banner.jpg) ;
+  background-size: cover;
+}
+.footer-img {
+  width: 100%;
+  height: auto;
+  background: url(C:\Users\admin\source\repos\WebApplication2\WebApplication1\images\Books-Banner.jpg) ;
+  background-size: cover;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.column.middle {
+  width: 100%;
+}
+.footer {
+  background-color: #cd5d39;
+  text-align: center;
+  padding: 60px;
+}
+</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+       
+             <div class="header">
+        
+    <h1>Welcome to E-Library</h1>
+    </div>
+
+    <div class="topnav">
+    <a href="home.aspx">Home</a>
+    <a href="#">Books</a>
+    <a href="signin.aspx">Sign in</a>
+        <%--<a href="#">Register</a>--%>
+    </div>
+   
+          <div class="column middle">
+    <h2 style="color:black" >Main Content</h2>
+              <table style="width:100%; margin-left:auto;margin-right:auto">
+        <tr>
+            <td colspan="2" style="width:800px; height:80px; background-color:cornflowerblue; text-align:center">
+                <h1 style="color:aliceblue">Sign Up</h1>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color:aliceblue;width:800px;height:500px">
+                <table style="font-family:Arial;margin-left:auto;margin-right:auto">
+                    <tr>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <h4 style="margin-left:auto;margin-right:auto;color:aliceblue;">First Name</h4>
+                        </td>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <asp:TextBox ID="fname" runat="server" ValidationGroup="aa"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFfname" ControlToValidate="fname" runat="server" ErrorMessage="*" ForeColor="Red" ValidationGroup="aa"></asp:RequiredFieldValidator>
+                        </td>
+                        </tr>
+                     <tr>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <h4 style="margin-left:auto;margin-right:auto;color:aliceblue;">Last Name</h4>
+                        </td>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <asp:TextBox ID="lname" runat="server" ValidationGroup="aa"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFlname" ControlToValidate="lname" runat="server" ErrorMessage="*" ForeColor="Red" ValidationGroup="aa"></asp:RequiredFieldValidator>
+                        </td>
+                        
+                    </tr>   
+                       <tr>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <h4 style="margin-left:auto;margin-right:auto;color:aliceblue;">User Name</h4>
+                        </td>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <asp:TextBox ID="uname" runat="server" ValidationGroup="aa"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFuname" ControlToValidate="uname" runat="server" ErrorMessage="*" ForeColor="Red" ValidationGroup="aa"></asp:RequiredFieldValidator>
+                        </td>
+                        
+                    </tr>  
+                   
+                    <tr>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <h4 style="margin-left:auto;margin-right:auto;color:aliceblue">Password</h4>
+                        </td>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <asp:TextBox ID="pwd" runat="server"  ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFpwd" runat="server" ControlToValidate="pwd" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  colspan="2" style="background-color:cornflowerblue;width:200px;height:30px;text-align:center">                          
+                        <h4 style="margin-left:auto;margin-right:auto;color:aliceblue">Confirm Password</h4>  
+                        </td>
+                        <td  colspan="2" style="background-color:cornflowerblue;width:200px;height:30px;text-align:center"> 
+                            <asp:TextBox ID="cpwd" runat="server" ></asp:TextBox>
+                            <asp:CompareValidator ID="CompareValidator1" ControlToValidate="cpwd" runat="server" ErrorMessage="Password not matching" ControlToCompare="pwd" Font-Size="Small" ForeColor="#cc3300" ValidationGroup="aa"></asp:CompareValidator>
+                            <asp:RequiredFieldValidator ID="RFcpwd" runat="server" ControlToValidate="cpwd" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    
+                     </tr>   
+                       <tr>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <h4 style="margin-left:auto;margin-right:auto;color:aliceblue;">Roll number</h4>
+                        </td>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <asp:TextBox ID="rollno" runat="server" ValidationGroup="aa"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFrno" ControlToValidate="rollno" runat="server" ErrorMessage="*" ForeColor="Red" ValidationGroup="aa"></asp:RequiredFieldValidator>
+                        </td>
+                        
+                    </tr>  
+                  
+                    <tr>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <h4 style="margin-left:auto;margin-right:auto;color:aliceblue;">E-mail</h4>
+                        </td>
+                        <td colspan="2" style="background-color:cornflowerblue;width:200px;height:25px;text-align:center">
+                            <asp:TextBox ID="email" runat="server" ValidationGroup="aa"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Wrong Format" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="email"></asp:RegularExpressionValidator>
+                        </td>
+                        
+                    </tr>  
+      
+                   
+                    <tr>
+                       <td colspan="2" style="background-color:cornflowerblue;width:200px;height:30px;text-align:center">
+                           <h4 style="margin-left:auto;margin-right:auto;color:aliceblue">Mobile Number</h4>
+
+                       </td>
+                      
+                        <td  colspan="2" style="background-color:cornflowerblue;width:200px;height:30px;text-align:center">
+                            <asp:TextBox ID="mobile" runat="server" ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFmob" runat="server" ControlToValidate="mobile" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="mobile" ErrorMessage="Wrong Format" ForeColor="Red" ValidationExpression="^[789]\d{9}$" ValidationGroup="aa">Wrong Format</asp:RegularExpressionValidator>
+                            </td>
+
+                    </tr>
+                    <tr>
+                        <td  colspan="4" style="background-color:cornflowerblue;width:200px;height:30px;text-align:center">
+                            <asp:Button ID="Button1" runat="server" Text="Sign Up" Class="button" OnClick="Button1_Click" ValidationGroup="aa" />
+                            </td>
+                    </tr>
+                </table>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        </table>
+              
+
+   
+         
+    
+  </div>
+  
+    <div class="footer" >
+    <p>Footer</p>
+        </div>
+    </form>
+</body>
+</html>
